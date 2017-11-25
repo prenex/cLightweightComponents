@@ -9,6 +9,12 @@
 /* Used for vararg handoff */
 #include <stdarg.h>
 
+/* Should be called on component start initialization - aquire resources*/
+void log_init(const char* logName);
+
+/* Should be called on component stop finalization - release resources */
+void log_quit();
+
 /* log trace message */
 void vlog_t(const char *fmt, va_list argp);
 void log_t(const char *fmt, ...) {

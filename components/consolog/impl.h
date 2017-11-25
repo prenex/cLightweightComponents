@@ -5,6 +5,19 @@
 
 #include "stdio.h"
 
+static const char *log_logName;
+
+/* Do nothing: Should be called on component start initialization - aquire resources*/
+void log_init(const char *logName) {
+	log_logName = logName;
+	fprintf(stdout, "INFO: Logger %s started!\n", log_logName);
+}
+
+/* Do nothing: Should be called on component stop finalization - release resources */
+void log_quit() {
+	fprintf(stdout, "INFO: Logger %s stopped!\n", log_logName);
+}
+
 void vlog_t(const char *fmt, va_list argp) {
 	fprintf(stdout, "TRACE: ");
 	vfprintf(stdout, fmt, argp);

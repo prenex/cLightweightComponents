@@ -8,7 +8,14 @@
 /* Program entry point */
 int main(int argc, char **argv) {
 	
+	// Init components
+	log_init("mainlog");
+
+	// Use components
 	log_i("Hello clwc!\n");
+
+	// Quit/release components
+	log_quit();
 
 	return 0;
 }
