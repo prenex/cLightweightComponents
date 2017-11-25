@@ -8,7 +8,7 @@ main: $(objs)
 	gcc main.c -o $@ $(libs) $(objs)
 
 %.o: %.c $(hdrs)
-	gcc -Wall -Wextra -g -o $@ $<
+	gcc -Wall -Wextra -g -o $@ -c $<
 
 clean:
 	rm -f main $(objs)
